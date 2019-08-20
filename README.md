@@ -26,13 +26,19 @@ A population genetic model for the number of incomplete sweeps under panmixia
   
   The Mathematica file is deposited at REF_TO_DIR. This was the first project for which I needed to use Mathematica, so the code it is probably pretty horrible and inefficient for anyone who is used to that software. 
 
-Also included in this directory are the 
+Also included in this directory is the plotting script I used to make the figure.
 
 Simuations of a stepping-stone model
 ------
-  I simulated very large
+I simulated very large stepping-stone population; 500 demes of 5,000 individuals each (i.e. 2.5 million individuals). I chose to model a large population so that I could see advantageous mutations spread in the form of "Fisher waves". Modelling recurrent adaptive evolution in such a population was not feasible except with a two-locus genotype simulation.   
 
-We came up with a way of modelling the DFE in 
+I simulated a simple 2-locus model, I applied the deterministic forces of selection, migration and recombination to genotype frequencies at two loci.  
+
+We came up with a way of modelling recurrent adaptive evolution at many sites in the genome as follows: 
+- Simulate genetic drift at a neutral locus for 100,000 generations, allele frequencies vary (100,000 replicates) 
+- Examine the distribution of Fst from the neutral simulations to establish cut-off value
+- Randomly draw a 
+
 
 
 
