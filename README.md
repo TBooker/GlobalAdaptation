@@ -10,7 +10,7 @@ There are three strands to this study:
 
 Below I give an overview of each strand, but check out their individual repos for more detailed information.
 
-*Because the simulation data files are large, I cannot add the raw data to the GitHub repo. I will include summary data, but the full data will be deposited on Dryad. I'll add a link to Dryad once it's done.*
+*Because the simulation data files are large, I cannot add the raw data to the GitHub repo. I will include summary data, but the full simulation data I analysed will be deposited on Dryad. I'll add a link to Dryad soon.*
 
 Simuating of a model of parapatry (or isolation with migration)
 ------
@@ -39,10 +39,6 @@ We came up with a way of modelling recurrent adaptive evolution at many sites in
 - Examine the distribution of Fst from the neutral simulations to establish cut-off value
 - Randomly draw a 
 
-
-
-
-
-If there is anything incomplete, you find bugs or you want clarification on anything, please don't hesitate to get in touch.
+If there is anything incomplete, you find bugs or you want clarification on anything, please don't hesitate to get in touch (my_last_name [at] zoology [dot] ubc [dot] ca)
 
 **A Disclaimer** If you want to use any of this code, keep an eye on path names. I am lazy and generally hard-code in paths and directories
