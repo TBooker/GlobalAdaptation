@@ -1,0 +1,73 @@
+initialize() {
+//	defineConstant("pA", 0.01);
+	defineConstant("N", 5000);
+//	defineConstant("M", 1);
+//	defineConstant("s", 0.1);
+//	defineConstant("REP", 1);
+	initializeTreeSeq();
+	initializeMutationRate(0);
+	initializeMutationType("m2", 0.5, "f", s);
+	initializeGenomicElementType("g1", m2, 1.0);
+	initializeGenomicElement(g1, 0, 600000);
+	initializeRecombinationRate(2.5e-7); // This is 2.5e-8 in big batch
+}
+1 late() {
+	defineConstant("simID", getSeed());
+	sim.addSubpop("p0", 2*N);
+	//	sim.treeSeqRememberIndividuals(sim.subpopulations.individuals);
+}
+1000 {
+	sim.addSubpopSplit(1, N, p0);
+	sim.addSubpopSplit(2, N, p0);
+	p0.setSubpopulationSize(0);
+	p1.setMigrationRates(p2, M/N);
+	p2.setMigrationRates(p1, M/N);
+}
+fitness(m2, p2) { 
+//	cat(relFitness  + '\t' + 1/relFitness + '\n');
+	return 1/relFitness;
+	}
+10000 late() {
+	// save the state of the simulation
+	sim.treeSeqOutput("/tmp/slim_" + simID + ".trees");
+	
+	// introduce the sweep mutation
+	target = sample(p1.genomes, 1);
+	target.addNewDrawnMutation(m2, 300000);
+}
+
+10001:120000 late() {
+	if (sim.countOfMutationsOfType(m2) == 0)
+	{
+		fixed = (sum(sim.substitutions.mutationType == m2) == 1);
+		
+		if (fixed)
+		{
+			cat(simID + ": FIXED\n");
+			sim.simulationFinished();
+		}
+		else
+		{
+			cat(getSeed() + ": LOST - RESTARTING\n");
+			
+			// go back to generation 1000
+			sim.readFromPopulationFile("/tmp/slim_" + simID + ".trees");
+			p1.setMigrationRates(p2, M/N);   // weak migration p2 -> p1
+			p2.setMigrationRates(p1, M/N);   // strong migration p1 -> p2
+			// start a newly seeded run by incrementing the previous seed
+			setSeed(getSeed() + 1);
+			// re-introduce the sweep mutation
+			target = sample(p1.genomes, 1);
+			target.addNewDrawnMutation(m2, 300000);
+		}
+	}
+
+	if ( sim.generation == 11000 ){
+//		cat(sim.generation+ '\n'	);
+		sim.treeSeqOutput("rep_" + REP + "_generation_" +sim.generation +"_s_" + s +"_M_" + M + "_.txt");
+}
+	else if ( (sim.generation-10000) % 50000 == 0 ){
+		cat(sim.generation+ '\n'	);
+		sim.treeSeqOutput("rep_" + REP + "_generation_" +sim.generation +"_s_" + s +"_M_" + M + "_.txt");
+}
+}
