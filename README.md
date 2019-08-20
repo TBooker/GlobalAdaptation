@@ -4,9 +4,9 @@ Global adaptation confounds the search for local adaptation
 In this repo you'll find the scripts, config files and the plotting scripts that I used for our study **"Global adaptation confounds the search for local adaptation"** *link to preprint - add once it's submitted* .
 
 There are three strands to this study: 
-  1. Simuations of a model of parapatry (or isolation with migration)
-  2. A population genetic model for the number of incomplete sweeps under panmixia
-  3. Simuations of a stepping-stone model
+  1. [Simuations of a model of parapatry (or isolation with migration)](Parapatry/)
+  2. [A population genetic model for the number of incomplete sweeps under panmixia](IncompleteSweeps/)
+  3. [Simuations of a stepping-stone model](SteppingStone/)
 
 Below I give an overview of each strand, but check out their individual repos for more detailed information.
 
