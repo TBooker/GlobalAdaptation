@@ -24,7 +24,7 @@ The basic work-flow was as follows:
 A population genetic model for the number of incomplete sweeps under panmixia
 ------
   
-  The Mathematica file is deposited at REF_TO_DIR. This was the first project for which I needed to use Mathematica, so the code it is probably pretty horrible and inefficient for anyone who is used to that software. 
+  The Mathematica file is deposited [here](/IncompleteSweeps). This was the first project for which I needed to use Mathematica, so the code it is probably pretty horrible and inefficient for anyone who is used to that software. 
 
 Also included in this directory is the plotting script I used to make the figure.
 
