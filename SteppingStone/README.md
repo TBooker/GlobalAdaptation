@@ -26,7 +26,7 @@ Each generation:
 This process is repeated for 100,000 generations and at the end I census the population, and look at the distribution of *Fst* at the neural sites linked to ongoing sweeps.
 
 Here's a cartoon of the simulation:
-![alt text](img/DFEsampling.jpeg "")
+![alt text](img/DFEsampling.jpg "")
 
 
 
