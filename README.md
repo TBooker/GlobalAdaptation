@@ -1,7 +1,7 @@
 Global adaptation confounds the search for local adaptation
 ======
 
-In this repo you'll find the scripts, config files and the plotting scripts that I used for our study **"Global adaptation confounds the search for local adaptation"** *link to preprint - add once it's submitted* .
+In this repo you'll find the scripts, config files and the plotting scripts that I used for our study [**"Global adaptation confounds the search for local adaptation"**](https://www.biorxiv.org/content/10.1101/742247v1).
 
 There are three strands to this study: 
   1. [Simuations of a model of parapatry (or isolation with migration)](Parapatry/)
