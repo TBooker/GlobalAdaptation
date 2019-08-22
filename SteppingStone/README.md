@@ -25,8 +25,10 @@ Each generation:
 
 This process is repeated for 100,000 generations and at the end I census the population, and look at the distribution of *Fst* at the neural sites linked to ongoing sweeps.
 
-Here's a cartoon of the simulation:
+Here's a description of the simulation from my jotter:
 ![alt text](img/DFEsampling.jpg "")
 
-
+Making Figure S4
+-----
+This figure was quite straightforward to make. I just took the results from each of the DFE sampling runs that I had performed and plotted them using ```ggplot2```. The plotting script [ref_to_script.R]() contains the code I used to generated Figure S4.
 
