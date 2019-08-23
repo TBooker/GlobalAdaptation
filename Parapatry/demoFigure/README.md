@@ -44,7 +44,9 @@ python python bin/getData.py -i M1_p0.0001_files/ --alleleFreq M1_p0.0001.allele
 I tried to comment that script a fair bit to make it clear what was going on.
 
 With the resulting files, I make plots using the following R scripts:
+
 [bin/demoPlot_S1.R](bin/demoPlot_S1.R) 
+[bin/demoPlot_3part.R](bin/demoPlot_3part.R) 
 
 
 
