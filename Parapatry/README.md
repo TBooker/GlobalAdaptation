@@ -57,10 +57,9 @@ Making Figures 1, 2 and S1
 
 In the "demo plots" (Figures 1, 2 and S1), population sizes were set to 1,000 dipoids per deme (i.e. *N* = 2,000) rather than 5,000 like thos used for making Figures 3, S2 and S3. The difference in size was due to the fact that I was recording the population state every 100 generations, so I ended up writing a large number of large files. I reduced the population size, but kept the population-scaled parameters the same, to reduce the file sizes I reduced population size.
 
-I basically followed the analysis workflow outlined above and made Manhattan plots of *Fst*, colouring the points that passed the significance threshold defined from neutral simulations (Figures 1 and S1). The script to make those plots is [ref_to_plotting_script.R]().
+I basically followed the analysis workflow outlined above and made Manhattan plots of *Fst*, colouring the points that passed the significance threshold defined from neutral simulations (Figures 1 and S1). The scripts to make those plots are in [demoFigure/](demoFigure/).
 
-Figure 2 was a little bit more involved. To make that figure, I divided the dataset into seven time slices and asked what the maximum individual *Fst* datapoint was during each of the slices. For each of the *Fst* hits, I obtained the allele frequency for linked beneficial mutations. The scripts for doing this are [ref_to_script.py]() 
-
+Figure 2 was a little bit more involved. To make that figure, I divided the dataset into seven time slices and asked what the maximum individual *Fst* datapoint was during each of the slices. For each of the *Fst* hits, I obtained the allele frequency for linked beneficial mutations. The scripts for doing this are [demoFigure/](demoFigure/) along with the script for plotting the results.
 
 Making Figures 3, S2 and S3
 ------
