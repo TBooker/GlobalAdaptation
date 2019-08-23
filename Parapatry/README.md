@@ -81,7 +81,8 @@ The script that did that is [ref_to_script.py]().
 
 Calculating ALPHA - Table S1
 ------
-In order to calculate ALPHA, the proportion of substitutions fixed by positive selection, I did an extra set of simulations [link_to_configs](). I did these because ALPHA is **very** sensitive to what happens to nonsynonymous mutations that aren't beneficial. To calculate ALPHA, you need to know dN and dS, and you need to break dN into the number of substitutions attributable to positive selection and othewise. I set a DFE for harmful mutations at a proportion of sites (1 - pA) assuming the one for *Drosophila* estimated by Loewe and Charlesworth (2006) - a gamma distribution with mean -200 and shape parameter = 0.3.
+In order to calculate ALPHA, the proportion of substitutions fixed by positive selection, I did an extra set of simulations [configs/getAlpha.slim](configs/getAlpha.slim). I did these because ALPHA is sensitive to what happens to nonsynonymous mutations that aren't beneficial. To calculate ALPHA, you need to know dN and dS, and you need to break dN into the number of substitutions attributable to positive selection and othewise. I set a DFE for harmful mutations at a proportion of sites (1 - pA) assuming the one for *Drosophila* estimated by Loewe and Charlesworth (2006) - a gamma distribution with mean -200 and shape parameter = 0.3.
+
+The substitutions which occured in these simulations were then used to calculate ALPHA. The script [bin/calculateAlpha.py](bin/calculateAlpha.py) does that. If you are playing around with these, keep and eye on the mutation id variables from SLiM, my scripts are probably pretty fragile with respect to those. 
 
 
-The substitutions which occured in these simulations were then used to calculate ALPHA. The script [ref_to_script.py]() does that. If you are playing around with these, keep and eye on the mutation id variables from SLiM, my scripts are probably pretty fragile with respect to those. 
