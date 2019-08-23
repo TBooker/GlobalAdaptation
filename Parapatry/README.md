@@ -55,7 +55,7 @@ I also performed a big set of neutral simulations for both migration rates I tes
 Making Figures 1, 2 and S1
 ------
 
-Other than the "demo plots" (Figures 1, 2 and S1), population sizes were set to 5,000 dipoids per deme (i.e. *N* = 10,000). The difference in size was due to the fact that I was recording the population state every XX generations, so I ended up writing a large number of large files. I reduced the population size, but kept the population-scaled parameters the same, to reduce the file sizes I reduced population size.
+In the "demo plots" (Figures 1, 2 and S1), population sizes were set to 1,000 dipoids per deme (i.e. *N* = 2,000) rather than 5,000 like thos used for making Figures 3, S2 and S3. The difference in size was due to the fact that I was recording the population state every 100 generations, so I ended up writing a large number of large files. I reduced the population size, but kept the population-scaled parameters the same, to reduce the file sizes I reduced population size.
 
 I basically followed the analysis workflow outlined above and made Manhattan plots of *Fst*, colouring the points that passed the significance threshold defined from neutral simulations (Figures 1 and S1). The script to make those plots is [ref_to_plotting_script.R]().
 

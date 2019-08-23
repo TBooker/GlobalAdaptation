@@ -1,0 +1,61 @@
+initialize() {
+//	defineConstant("pA", 0.0);
+//	defineConstant("M", 1);
+	defineConstant("s_hat", 0.125);
+//	defineConstant("REP", 1);
+	initializeTreeSeq();
+	initializeMutationRate(1.25e-6 * pA);
+	initializeMutationType("m2", 0.5, "f", s_hat);
+	initializeGenomicElementType("g1", m2, 1.0);
+	initializeGenomicElement(g1, 47500, 52499);
+	initializeGenomicElement(g1, 152500, 157499);
+	initializeGenomicElement(g1, 257500, 262499);
+	initializeGenomicElement(g1, 362500, 367499);
+	initializeGenomicElement(g1, 467500, 472499);
+	initializeGenomicElement(g1, 572500, 577499);
+	initializeGenomicElement(g1, 677500, 682499);
+	initializeGenomicElement(g1, 782500, 787499);
+	initializeGenomicElement(g1, 887500, 892499);
+	initializeGenomicElement(g1, 992500, 997499);
+	initializeGenomicElement(g1, 1097500, 1102499);
+	initializeGenomicElement(g1, 1202500, 1207499);
+	initializeGenomicElement(g1, 1307500, 1312499);
+	initializeGenomicElement(g1, 1412500, 1417499);
+	initializeGenomicElement(g1, 1517500, 1522499);
+	initializeGenomicElement(g1, 1622500, 1627499);
+	initializeGenomicElement(g1, 1727500, 1732499);
+	initializeGenomicElement(g1, 1832500, 1837499);
+	initializeGenomicElement(g1, 1937500, 1942499);
+	initializeGenomicElement(g1, 2042500, 2047499);
+        initializeGenomicElement(g1, 2147500, 2147501);
+	initializeRecombinationRate(1.25e-6); // This is 2.5e-8 in big batch
+}
+1 late() {
+	defineConstant("simID", getSeed());
+	sim.addSubpop("p0", 2000);
+	//	sim.treeSeqRememberIndividuals(sim.subpopulations.individuals);
+}
+
+1:100 fitness(m2) {
+//	cat(sim.generation + '\n');
+	return 0.0;
+	}
+
+100 {
+	sim.addSubpopSplit(1, 1000, p0);
+	sim.addSubpopSplit(2, 1000, p0);
+	p0.setSubpopulationSize(0);
+	p1.setMigrationRates(p2, M/1000);
+	p2.setMigrationRates(p1, M/1000);
+}
+5000:7000 late() {
+if (sim.generation % 50 == 0){
+	cat(sim.generation+ '\n'	);
+	sim.treeSeqOutput("rep_" + REP + "_generation_" +sim.generation +"_shat_" + s_hat +"_M_" + M +"_pA_" + pA + "_.txt");
+}
+}
+
+
+
+
+
