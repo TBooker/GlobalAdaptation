@@ -29,7 +29,7 @@ initialize() {
 	initializeGenomicElement(g1, 2042500, 2047499);
 	initializeGenomicElement(g1, 2147500, 2147501);
 
-	initializeRecombinationRate(2.5e-7); // This is 2.5e-8 in big batch
+	initializeRecombinationRate(2.5e-7);
 }
 1 late() {
 	defineConstant("simID", getSeed());

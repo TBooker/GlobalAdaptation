@@ -1,0 +1,53 @@
+initialize() {
+//	     defineConstant("pA", 0.001);
+//	     defineConstant("M", 1);
+//	     defineConstant("s_hat", 0.01);
+//	     defineConstant("REP", 1);
+	     //initializeTreeSeq();
+	     initializeMutationRate(2.5e-7 );
+	     initializeMutationType("m1", 0.5, "g", -100./N, 0.3);
+	     initializeMutationType("m2", 0.5, "e", s_hat);
+//	     initializeMutationType("m3", 0.5, "f", 0);
+	     initializeGenomicElementType("g1", c(m1,m2), c(1-pA, pA));
+	     initializeGenomicElement(g1, 47500, 52499);
+	     initializeGenomicElement(g1, 152500, 157499);
+	     initializeGenomicElement(g1, 257500, 262499);
+	     initializeGenomicElement(g1, 362500, 367499);
+	     initializeGenomicElement(g1, 467500, 472499);
+	     initializeGenomicElement(g1, 572500, 577499);
+	     initializeGenomicElement(g1, 677500, 682499);
+	     initializeGenomicElement(g1, 782500, 787499);
+	     initializeGenomicElement(g1, 887500, 892499);
+	     initializeGenomicElement(g1, 992500, 997499);
+	     initializeGenomicElement(g1, 1097500, 1102499);
+	     initializeGenomicElement(g1, 1202500, 1207499);
+	     initializeGenomicElement(g1, 1307500, 1312499);
+	     initializeGenomicElement(g1, 1412500, 1417499);
+	     initializeGenomicElement(g1, 1517500, 1522499);
+	     initializeGenomicElement(g1, 1622500, 1627499);
+	     initializeGenomicElement(g1, 1727500, 1732499);
+	     initializeGenomicElement(g1, 1832500, 1837499);
+	     initializeGenomicElement(g1, 1937500, 1942499);
+	     initializeGenomicElement(g1, 2042500, 2047499);
+	     initializeRecombinationRate(2.5e-7);
+}
+1 late() {
+  defineConstant("simID", getSeed());
+  sim.addSubpop("p0", 2*N);
+  //		      sim.treeSeqRememberIndividuals(sim.subpopulations.individuals);
+}
+
+1:1000 fitness(m2) {
+       return 0.0;}
+
+1000 {
+     sim.addSubpopSplit(1, N, p0);
+     sim.addSubpopSplit(2, N, p0);
+     p0.setSubpopulationSize(0);
+     p1.setMigrationRates(p2, M/N);
+     p2.setMigrationRates(p1, M/N);
+}
+200000 late() {
+//11001 late() {
+	sim.outputFixedMutations(); 
+}
