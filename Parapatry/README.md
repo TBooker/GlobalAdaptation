@@ -64,11 +64,11 @@ Figure 2 was a little bit more involved. To make that figure, I divided the data
 Making Figures 3, S2 and S3
 ------
 
-For a given parameter set, I had 2,000 simulation replicates. For each replicate, I had performed an *Fst* genome scan, so from each I extracted the analysis windows which overlapped "gene-like" sequences. Using the *Fst* cut-off values determined from the neutral simualtions, I classified windows as being either outliers or not. I then bootstrap the data by simulation replicate, generating samples and calculating the proportion of outlier analysis windows observed in that particular replicate. I did that 2,000 times for each dataset. The results of each of those were plotted as the violin plots shown in Figure 3. The R script [ADD PLOTTING SCRIPT](bin/PlottingScript.R), and the files that it links to, should generate Figure 3.
+For a given parameter set, I had 2,000 simulation replicates. For each replicate, I had performed an *Fst* genome scan, so from each I extracted the analysis windows which overlapped "gene-like" sequences. Using the *Fst* cut-off values determined from the neutral simualtions, I classified windows as being either outliers or not. I then bootstrap the data by simulation replicate, generating samples and calculating the proportion of outlier analysis windows observed in that particular replicate. I did that 2,000 times for each dataset. The results of each of those were plotted as the violin plots shown in Figure 3. The R script [PlotProportionOutliers.R](bin/PlotProportionOutliers.R), and the files that it links to, should generate Figure 3.
 
-For Figure S2 I looked up if there was a mutation at a frequency between 0.2 and 0.8 segregating in a particular analysis window. The script [ref_to_script.py]() did that.
+For Figure S2 I looked up if there was a mutation at a frequency between 0.2 and 0.8 segregating in a particular analysis window. The script [PlotProportionOutliers.R](bin/PlotProportionOutliers.R) did that too.
 
-For Figure S3, I took all of the per-SNP *Fst* values for the 10,000bp straddling the "gene-like" sequences. I asked whether the number of SNPs with *Fst* greater than the per-SNP cut-off from the neutral simulations was significant under a binomial distribution with probability *P* (see Methods section in the main text). I then plotted this data side-by-side with the window-based analysis using the [ref_to_script.R]() script.
+For Figure S3, I took all of the per-SNP *Fst* values for the 10,000bp straddling the "gene-like" sequences. I asked whether the number of SNPs with *Fst* greater than the per-SNP cut-off from the neutral simulations was significant under a binomial distribution with probability *P* (see Methods section in the main text). I then plotted this data side-by-side with the window-based analysis using the [PlotProportionOutliers_SNPs_and_windows.R](bin/PlotProportionOutliers_SNPs_and_windows.R) script.
 
 *Note that this approach may have been slightly conservative as I only considered 20 analysis windows per simulation replicate. There may be analysis windows that exhibit elevated Fst as a result of global sweeps*
 
@@ -77,7 +77,10 @@ Making Figure 4
 
 To make the figure showing genetic diversity and *Fst*, I just extracted the top 100 analysis windows from the parameter set specified in the figure legend and calculated nucleotide diversity for the same windows. I repeated this with simulations modelling antagonistic pleiotropy.
 
-The script that did that is [ref_to_script.py]().
+The script that did that is [addDiversityToFst.py(bin/addDiversityToFst.py).
+The script that plotted the result is [plot_Fst_pi.R](bin/plot_Fst_pi.R).
+
+
 
 Calculating ALPHA - Table S1
 ------
