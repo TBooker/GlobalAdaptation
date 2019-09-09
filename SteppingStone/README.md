@@ -32,5 +32,5 @@ Here's a description of the simulation from my jotter:
 
 Making Figure S4
 -----
-This figure was quite straightforward to make. I just took the results from each of the DFE sampling runs that I had performed and plotted them using ```ggplot2```. The plotting script [ref_to_script.R]() contains the code I used to generated Figure S4.
+This figure was quite straightforward to make. I just took the results from each of the DFE sampling runs that I had performed and plotted them using ```ggplot2```. The plotting script [PlotFstOutliers.R(bin/PlotFstOutliers.R) contains the code I used to generated Figure S4.
 
